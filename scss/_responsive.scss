@@ -1,6 +1,6 @@
 
-/*  ===================================MEDIA QUERIES PANTALLA ANCHA=============
-======================================================================*/
+//  ===================================MEDIA QUERIES PANTALLA ANCHA=============
+
 @media (max-width:1200px){
     #local{
         flex-wrap: wrap;
@@ -23,8 +23,7 @@
 }
 }
 
-/*  ===================================MEDIA QUERIES PANTALLA EXTRA SM=============
-======================================================================*/
+//  ===================================MEDIA QUERIES PANTALLA EXTRA SM=============
 @media(max-width: 576px) {
     .wrapper, .intro__section, .servicios, .information-text, .ubication .contenedor-formulario{
          width: 100% !important;
