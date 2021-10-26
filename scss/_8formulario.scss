@@ -1,0 +1,33 @@
+//=====  8. SECCION FORMULARIO=====/
+.formulario-contacto{
+    background-color: #1b2a4e;
+    min-height: 500px;
+    position: relative;
+    
+    // ====   8.2. SECCION FORMULARIO
+    
+    .formulario-contacto-contenedor__div{
+        position: relative;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fbfafa ;
+        border-radius: 5px;
+        width: 100%;
+        justify-content: center;
+        max-width: 500px;
+        .formulario-contacto-titulo__div{
+            .titulo{
+                color: $color-texto;
+                font-size: $standard-size;
+                font-weight: bold;
+            }
+            .parrafo{
+                font-size: $standard-size-parrafo
+            }
+
+        }
+        
+        
+    }
+}

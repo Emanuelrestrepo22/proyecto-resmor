@@ -1,0 +1,191 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box
+}
+/*////////====================================
+GLOBALES =====================================*/
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap');
+</style>
+CSS rules to specify families
+
+body{
+    font-family: 'Raleway', sans-serif;
+    overflow: hidden;
+}
+
+/*  =============MENU======================================*/
+#menu li > a{
+    font-size: 18px;
+    font-weight: bold;
+    color: #3f3f3f;
+
+}
+#menu form > button{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* ===============   IMAGE SLIDER  ===============================*/
+
+.carousel-inner {
+    max-height: 40rem;
+}
+
+
+/*  ===============SECCIÓN DE NUESTRO EQUIPO MAPA=============
+======================================================================*/
+/*===================SECCION NUESTRO EQUIPO IMAGEN==========================*/
+
+
+
+#img-equipo{
+    max-height:30rem !important;
+    width:50%;
+}
+
+
+/*===================SECCION NUESTRO EQUIPO MAPA==========================*/
+#local {
+    margin-top:50px;
+    background-color: #f3f3f3;
+    display:flex;
+    justify-content: center; 
+    padding-bottom: 300px; 
+}
+
+.mapa {
+    background: url(./img/mapa.jpg);
+    width:100%;
+    height:500px;
+}
+
+
+.wrapper-local {
+    width:50%;
+    margin-left:100px;
+    padding-top:150px;
+}
+
+
+/*  =================================
+SECCIÓN EQUIPO BUENOS AIRES =============
+======================================================================*/
+#numeros-local div{
+    padding: 0 20px 0 0;
+    height: 50px;
+    align-items: left;
+}
+#numeros-local div:not(:last-child){
+    border-right: 2px solid #3f3f3f;
+}
+#numeros-local div:not(:first-child){
+    padding: 20px;
+
+}
+#numeros-local p{
+    margin: 0;
+}
+
+/*  =================================
+CONTACTO BACKGROUND =============
+======================================================================*/
+#bg-contacto{
+    position: relative;
+    top:-130px;
+}
+#seccion-contacto{
+    background-color: #1b2a4e;
+    min-height: 500px;
+    position: relative;
+}
+/*  =================================
+CONTACTO FORMULARIO=============
+======================================================================*/
+#contenedor-formulario{
+    position: relative;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fbfafa ;
+    border-radius: 5px;
+    max-width: 500px;
+}
+
+/*  =================================
+FOOTER=============
+======================================================================*/
+footer{
+    background: #1b2a4e;
+    min-height: 100px;
+}
+footer p{
+    color: #3f3f3f;
+    text-align: center;
+}
+
+#titulo-formulario{
+    color: #3f3f3f;
+}
+
+#iconos i{
+    font-size: 26px;
+    padding: 0 8px;
+    color: #f3f3f3;
+}
+
+
+
+/*  ===================================MEDIA QUERIES PANTALLA ANCHA=============
+======================================================================*/
+@media (max-width:1200px){
+    #local{
+        flex-wrap: wrap;
+        padding-top: 30px;
+    }
+    .wrapper{
+        width: 90%;
+        margin: auto;
+        padding-top: 50px;
+    }
+}
+
+/*  ===================================MEDIA QUERIES PANTALLA SM=============
+======================================================================*/
+@media (max-width:768px) {
+    #intro, #equipo{
+        width: 90% !important;
+    }
+    #equipo p{
+        display: none;
+    }
+    .servicio-fila{
+        width: 100% !important;
+    }
+    #bg-contacto{
+        top: -110px;
+}
+
+/*  ===================================MEDIA QUERIES PANTALLA EXTRA SM=============
+======================================================================*/
+@media(max-width: 576px) {
+    .icono-wrap{
+        flex-wrap: wrap;
+        justify-content: center !important;
+    }
+}
+
+
+/*  ===================================MEDIA QUERIES PANTALLA ANCHA=============
+======================================================================*/
+
+
+/*  ===================================MEDIA QUERIES PANTALLA ANCHA=============
+======================================================================*/
+
+
+/*  ===================================MEDIA QUERIES PANTALLA ANCHA=============
+======================================================================*/
+

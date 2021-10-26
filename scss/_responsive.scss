@@ -1,0 +1,32 @@
+
+/*  ===================================MEDIA QUERIES PANTALLA ANCHA=============
+======================================================================*/
+@media (max-width:1200px){
+    #local{
+        flex-wrap: wrap;
+        padding-top: 30px;
+    }
+    .wrapper, .intro__section, .servicios, .information-text, .ubication .contenedor-formulario{
+        width: 90%;
+        margin: auto;
+        padding-top: 50px;
+    }
+}
+
+//===================================MEDIA QUERIES PANTALLA SM=============
+@media (max-width:768px){
+    .wrapper, .intro__section, .servicios, .information-text, .ubication .contenedor-formulario{
+        width: 100% !important;
+    }
+    .information-text p{
+        display: none;
+}
+}
+
+/*  ===================================MEDIA QUERIES PANTALLA EXTRA SM=============
+======================================================================*/
+@media(max-width: 576px) {
+    .wrapper, .intro__section, .servicios, .information-text, .ubication .contenedor-formulario{
+         width: 100% !important;
+    }
+}

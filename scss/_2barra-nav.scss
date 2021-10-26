@@ -1,0 +1,33 @@
+/*=  2.   ==BARRA NAV===*/
+#menu__nav{
+    padding:3;
+    background-color: #BFB38F;
+    div{
+        a{
+            span{
+                color: #0f1b49;
+                font-size: 5;
+                font-weight: bold;
+            }
+        }
+        div{
+            margin-bottom: 0.5;
+            ul{
+                li{
+                    a{
+                        font-size: 18px;
+                        font-weight: bold;
+                        color: #3f3f3f;
+                    }
+                }
+                form{
+                    display: flex;
+                    button{
+                        font-size: 18px;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+// == 7.  UBICACION / INFORMACION //
+.ubication{
+    @include standar-box(space-around, column);
+    margin-top: 10em;
+    padding-bottom: 20em;
+    background-color: $bg-ubi;
+
+    /*===  7.2   TEXTO by MAPA  */
+    .texto-mapa__div{
+        display: flex;
+        flex-direction: column;
+        margin-top: 3em;
+        
+
+        .wrapper-local{
+            width: 75%;
+            margin:5em;
+            padding: top 15em;;
+            #typewriter{
+                color: #0f1b49;
+                margin-bottom: 1em;
+                font-size: $standard-size;
+                font-weight: bold;
+            }
+            p{
+                font-size: $standard-size-parrafo;
+                text-align: center;
+            }
+            
+        }
+        
+    }
+    /*=== 7.3  SECCION CLIMA===*/
+    .clima__section{
+        div{
+            padding: 0 20px 0 0;
+            @include standar-box;
+            &:not(:last-child){
+                 border-right: 2px solid #0f1b49;
+            }
+            &:not(:first-child){
+                padding: 20px;
+            }
+            .oneText__p{
+                color: #0f1b49;
+                font-size: 0.5em;
+            }
+        }
+    }
+   
+}

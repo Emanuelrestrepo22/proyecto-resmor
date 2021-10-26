@@ -1,0 +1,31 @@
+
+//==== 6. SECCION ACERCA DE NOSOTROS /INFORMATIVO   =
+section{
+    //===  6.1   TEXTO INFORMATIVO===
+    .information-text{
+        @include standar-box (center, column);
+        margin: auto;
+        text-align: center;
+        padding: 0.5em;
+        width: 90%;
+        h1{
+            margin-bottom: 1em;
+            font-size: 2em;
+            span{
+                color: $color-texto;
+            }
+        }
+        p{
+            font-size: $standard-size-parrafo;
+        }
+        /*===  IMAGE-COLAGE=======*/
+        .informacion-text-image__div{
+            width: auto;
+            #equipo__img{
+                max-height:30rem !important;
+                width: 80%;
+            }
+        }
+    }
+
+}

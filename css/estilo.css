@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap");
+/*== 1.    ENCABEZADO===*/
+.container1__header {
+  background-color: #0f1b49;
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+  padding: 20px;
+  font-size: 1.5em; }
+
+/*=  2.   ==BARRA NAV===*/
+#menu__nav {
+  padding: 3;
+  background-color: #BFB38F; }
+  #menu__nav div a span {
+    color: #0f1b49;
+    font-size: 5;
+    font-weight: bold; }
+  #menu__nav div div {
+    margin-bottom: 0.5; }
+    #menu__nav div div ul li a {
+      font-size: 18px;
+      font-weight: bold;
+      color: #3f3f3f; }
+    #menu__nav div div ul form {
+      display: flex; }
+      #menu__nav div div ul form button {
+        font-size: 18px;
+        font-weight: bold; }
+
+section .information-text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0f1b491f;
+  margin: auto;
+  text-align: center;
+  padding: 0.5em;
+  width: 90%;
+  /*===  IMAGE-COLAGE=======*/ }
+  section .information-text h1 {
+    margin-bottom: 1em;
+    font-size: 2em; }
+    section .information-text h1 span {
+      color: #0f1b49; }
+  section .information-text p {
+    font-size: 1.5em; }
+  section .information-text .informacion-text-image__div {
+    width: auto; }
+    section .information-text .informacion-text-image__div #equipo__img {
+      max-height: 30rem !important;
+      width: 80%; }
+
+.formulario-contacto {
+  background-color: #1b2a4e;
+  min-height: 500px;
+  position: relative; }
+  .formulario-contacto .formulario-contacto-contenedor__div {
+    position: relative;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fbfafa;
+    border-radius: 5px;
+    width: 100%;
+    justify-content: center;
+    max-width: 500px; }
+    .formulario-contacto .formulario-contacto-contenedor__div .formulario-contacto-titulo__div .titulo {
+      color: #0f1b49;
+      font-size: 2em;
+      font-weight: bold; }
+    .formulario-contacto .formulario-contacto-contenedor__div .formulario-contacto-titulo__div .parrafo {
+      font-size: 1.5em; }
+
+/*  ===================================MEDIA QUERIES PANTALLA ANCHA=============
+======================================================================*/
+@media (max-width: 1200px) {
+  #local {
+    flex-wrap: wrap;
+    padding-top: 30px; }
+  .wrapper, .intro__section, .servicios, .information-text, .ubication .contenedor-formulario {
+    width: 90%;
+    margin: auto;
+    padding-top: 50px; } }
+
+@media (max-width: 768px) {
+  .wrapper, .intro__section, .servicios, .information-text, .ubication .contenedor-formulario {
+    width: 100% !important; }
+  .information-text p {
+    display: none; } }
+
+/*  ===================================MEDIA QUERIES PANTALLA EXTRA SM=============
+======================================================================*/
+@media (max-width: 576px) {
+  .wrapper, .intro__section, .servicios, .information-text, .ubication .contenedor-formulario {
+    width: 100% !important; } }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Raleway', sans-serif;
+  /*===  3. CAROUSEL SLIDER===*/
+  /*===  4.  SECCION INTRO===*/
+  /*===  5. SECCION SERVICIOS===*/ }
+  body div .carousel .carousel-inner {
+    max-height: 40rem; }
+  body .intro__section {
+    width: 100%;
+    text-align: center; }
+    body .intro__section h1 {
+      padding: 0.5em;
+      font-size: 2em; }
+      body .intro__section h1 span {
+        color: #0f1b49;
+        font-weight: bold; }
+    body .intro__section p {
+      padding: 2rem;
+      font-size: 1.5em; }
+  body .servicios {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    background-color: #0f1b491f;
+    flex-wrap: wrap; }
+    body .servicios .servicios-caja__div {
+      width: 80%; }
+      body .servicios .servicios-caja__div .servicios-caja__img {
+        width: 250px; }
+  body footer {
+    background-color: #0f1b49;
+    text-align: center; }
+    body footer p {
+      color: #3f3f3f;
+      text-align: center; }
+    body footer #iconos i {
+      font-size: 2em;
+      padding: 0 8px;
+      color: #3f3f3f; }

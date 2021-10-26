@@ -1,0 +1,86 @@
+// IMPORTS //
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap');
+@import "variables";
+@import "1encabezado";
+@import "2barra-nav";
+@import "6acerca-nosotros";
+@import "8formulario";
+@import "responsive";
+
+//======GENERALES===
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+
+
+   
+    
+    /*===  3. CAROUSEL SLIDER===*/
+    div{
+        .carousel{
+            .carousel-inner{
+                max-height: 40rem;
+            }
+        }
+    }
+    /*===  4.  SECCION INTRO===*/
+    .intro__section{
+        width: 100%;
+        text-align: center;
+
+        h1{
+            padding: 0.5em;
+            font-size: $standard-size;
+            span{
+                color: #0f1b49;
+                font-weight: bold;
+
+            }
+        }
+        p{
+            padding: 2rem;
+            font-size: $standard-size-parrafo;
+        }
+    }
+    /*===  5. SECCION SERVICIOS===*/
+    .servicios{
+        @include standar-box(center, row);
+        flex-wrap: wrap;
+        .servicios-caja__div{
+            width: 80%;
+            .servicios-caja__img{
+                width: 250px;
+            }
+        }
+    }
+
+    //  9.. FOOTER ===============
+    footer{
+        background-color: $color-texto;
+        text-align: center;
+        p{
+            color: #3f3f3f;
+            text-align: center;
+        }
+        #iconos{
+            i{
+                font-size: 2em;
+                padding: 0 8px;
+                color: #3f3f3f;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
