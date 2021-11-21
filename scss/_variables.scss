@@ -3,6 +3,8 @@ $standard-size: 2em;
 $standard-size-parrafo: 1.5em;
 $bg-ubi: #f3f3f3;
 $bg-standard: #0f1b491f;
+$j-c: center;
+$flex-direction: 
 
 // MIXINS  ==
 @mixin standar-box ($j-c, $flex-direction) {
@@ -11,4 +13,6 @@ $bg-standard: #0f1b491f;
     flex-direction: $flex-direction;
     align-items: center;
     background-color: $bg-standard;
+    justify-content: $j-c;
+    flex-direction: $flex-direction;
 }

@@ -34,7 +34,7 @@
     .clima__section{
         div{
             padding: 0 20px 0 0;
-            @include standar-box;
+            @include standar-box();
             &:not(:last-child){
                  border-right: 2px solid #0f1b49;
             }
