@@ -7,6 +7,7 @@ photos/
 /photos/
 photosgit
 /img1/
+
 # Legacy reference (assets curados en image/brand/)
 branding-resmor/
 
@@ -15,3 +16,28 @@ public/
 
 # Build artifacts opcionales
 *.css.map
+
+# ─── Interno de desarrollo (no se deploya) ───
+# Sistema multi-agente, skills, templates, docs y scripts:
+# son herramientas de trabajo del equipo, no parte del sitio.
+agents/
+skills/
+templates/
+docs/
+scripts/
+AGENTS.md
+CLAUDE.md
+
+# Inventario y manual de marca: referencia interna
+image/brand/README.md
+image/brand/PRESENTACION_RESMOR.pdf
+
+# Variantes de logo no referenciadas en HTML público
+image/brand/logos/logo-resmor-gold-wordmark.png
+image/brand/logos/logo-variant-05.png
+image/brand/logos/logo-variant-06.png
+image/brand/logos/monogram-navy-on-gold.png
+
+# Piezas de marketing (impreso, tarjeta) no usadas en el sitio
+image/brand/marketing/flyer-imprimir.jpg
+image/brand/marketing/tp-resmor-02.jpg
