@@ -33,13 +33,27 @@ jobs:
       - name: Build CSS
         run: npm run build-css
 
+      - name: Stage site for Pages
+        run: |
+          mkdir -p _site
+          rsync -av --exclude='_site' \
+                    --exclude='node_modules' \
+                    --exclude='.git' \
+                    --exclude='.github' \
+                    --exclude='.gitignore' \
+                    --exclude='package*.json' \
+                    --exclude='scss' \
+                    --exclude='*.code-workspace' \
+                    --exclude='font-family.txt' \
+                    ./ _site/
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: ./_site
 
   deploy:
     needs: build
