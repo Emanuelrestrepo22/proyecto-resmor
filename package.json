@@ -1,17 +1,16 @@
 {
-  "name": "proyecto-resmor",
-  "version": "1.0.0",
-  "description": "",
+  "name": "resmor-transportes",
+  "version": "2.0.0",
+  "description": "Web oficial de Resmor — Minifletes & Transporte Ejecutivo en Buenos Aires.",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build-css": "node-sass --include-path scss scss/estilo.scss css/estilo.css",
-    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+    "build-css": "sass scss/estilo.scss css/estilo.css --no-source-map --style=compressed",
+    "watch-css": "sass --watch scss/estilo.scss:css/estilo.css",
+    "dev": "sass --watch scss/estilo.scss:css/estilo.css"
   },
-  "author": "",
+  "author": "Resmor Transportes",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^6.0.1",
-    "nodemon": "^2.0.13"
+    "sass": "^1.77.0"
   }
 }

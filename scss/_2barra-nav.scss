@@ -1,33 +1,111 @@
-/*=  2.   ==BARRA NAV===*/
-#menu__nav{
-    padding:3;
-    background-color: #BFB38F;
-    div{
-        a{
-            span{
-                color: #0f1b49;
-                font-size: 5;
-                font-weight: bold;
-            }
+// ═══════════════════════════════════════════════════════════════
+// NAVBAR — Identidad de marca + WhatsApp en CTA
+// ═══════════════════════════════════════════════════════════════
+
+@use "variables" as *;
+
+.navbar-resmor {
+    background: $color-bg-base;
+    border-bottom: 1px solid $color-border;
+    padding-block: $space-md;
+    transition: box-shadow 0.2s ease;
+
+    &.is-scrolled {
+        box-shadow: $shadow-sm;
+    }
+
+    .container-fluid {
+        max-width: 1280px;
+        padding-inline: $container-padding-x;
+    }
+
+    .navbar-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: $space-sm;
+        text-decoration: none;
+        padding: 0;
+        margin-right: $space-lg;
+
+        img {
+            height: 44px;
+            width: auto;
+            display: block;
         }
-        div{
-            margin-bottom: 0.5;
-            ul{
-                li{
-                    a{
-                        font-size: 18px;
-                        font-weight: bold;
-                        color: #3f3f3f;
-                    }
-                }
-                form{
-                    display: flex;
-                    button{
-                        font-size: 18px;
-                        font-weight: bold;
-                    }
-                }
-            }
+
+        .brand-text {
+            font-family: $font-display;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: $color-brand-azul;
+            letter-spacing: 0.04em;
+            line-height: 1;
+        }
+
+        .brand-tagline {
+            display: block;
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: $ls-overline;
+            color: $color-brand-dorado-dark;
+            text-transform: uppercase;
+            margin-top: 2px;
         }
     }
+
+    .nav-link {
+        color: $color-brand-azul;
+        font-family: $font-body;
+        font-weight: 500;
+        font-size: $fs-small;
+        text-transform: uppercase;
+        letter-spacing: $ls-uppercase;
+        padding: $space-xs $space-md !important;
+        position: relative;
+        transition: color 0.2s ease;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: $space-md;
+            right: $space-md;
+            bottom: $space-xxs;
+            height: 2px;
+            background: $color-brand-dorado;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.25s ease;
+        }
+
+        &:hover,
+        &.active,
+        &[aria-current="page"] {
+            color: $color-brand-azul;
+
+            &::after { transform: scaleX(1); }
+        }
+    }
+
+    .navbar-toggler {
+        border-color: $color-brand-azul;
+        color: $color-brand-azul;
+
+        &:focus { box-shadow: 0 0 0 0.2rem rgba(176, 165, 106, 0.3); }
+    }
+
+    .navbar-cta {
+        margin-left: $space-md;
+
+        @media (max-width: 991.98px) {
+            margin-top: $space-md;
+            margin-left: 0;
+            width: 100%;
+            justify-content: center;
+        }
+    }
+}
+
+// Legacy alias del HTML viejo
+#menu__nav {
+    @extend .navbar-resmor;
 }

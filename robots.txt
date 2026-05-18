@@ -1,0 +1,19 @@
+# robots.txt — Resmor Transportes
+# Bots permitidos: todos
+# Asegurar indexación de páginas públicas + sitemap
+
+User-agent: *
+Allow: /
+
+# Bloquear áreas internas / no-públicas si existen
+Disallow: /docs/
+Disallow: /agents/
+Disallow: /skills/
+Disallow: /templates/
+Disallow: /scripts/
+Disallow: /node_modules/
+Disallow: /branding-resmor/
+Disallow: /image/brand/PRESENTACION_RESMOR.pdf
+
+# Sitemap
+Sitemap: https://resmor.com.ar/sitemap.xml

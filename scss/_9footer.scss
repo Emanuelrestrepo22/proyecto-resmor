@@ -1,0 +1,131 @@
+// ═══════════════════════════════════════════════════════════════
+// FOOTER — Azul con monograma dorado + iconos sociales
+// ═══════════════════════════════════════════════════════════════
+
+@use "variables" as *;
+
+.footer-resmor {
+    background: $color-brand-azul;
+    color: $color-text-on-dark;
+    padding-block: $space-3xl $space-xl;
+    padding-inline: $container-padding-x;
+
+    &__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: $space-2xl;
+
+        @media (min-width: 768px) {
+            grid-template-columns: 1.2fr 1fr 1fr 1fr;
+        }
+    }
+
+    &__brand {
+        .logo-monogram {
+            width: 64px;
+            height: 64px;
+            margin-bottom: $space-md;
+        }
+
+        p {
+            color: rgba(244, 242, 236, 0.8);
+            font-size: $fs-small;
+            max-width: 32ch;
+        }
+    }
+
+    &__col {
+        h4 {
+            font-size: $fs-small;
+            text-transform: uppercase;
+            letter-spacing: $ls-overline;
+            color: $color-brand-dorado-light;
+            margin-bottom: $space-md;
+            font-weight: 600;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                margin-bottom: $space-xs;
+            }
+
+            a {
+                color: rgba(244, 242, 236, 0.85);
+                text-decoration: none;
+                font-size: $fs-small;
+                transition: color 0.2s ease;
+
+                &:hover {
+                    color: $color-brand-dorado-light;
+                }
+            }
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: $space-sm;
+            margin-bottom: $space-sm;
+            font-size: $fs-small;
+            color: rgba(244, 242, 236, 0.85);
+
+            i {
+                color: $color-brand-dorado-light;
+                font-size: 1.1em;
+                flex-shrink: 0;
+                margin-top: 2px;
+            }
+
+            a {
+                color: rgba(244, 242, 236, 0.85);
+                text-decoration: none;
+
+                &:hover { color: $color-brand-dorado-light; }
+            }
+        }
+    }
+
+    &__social {
+        display: flex;
+        gap: $space-md;
+        margin-top: $space-md;
+
+        a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(244, 242, 236, 0.08);
+            color: $color-brand-dorado-light;
+            font-size: 1.2em;
+            transition: all 0.2s ease;
+            text-decoration: none;
+
+            &:hover {
+                background: $color-brand-dorado;
+                color: $color-brand-azul;
+                transform: translateY(-2px);
+            }
+        }
+    }
+
+    &__bottom {
+        max-width: 1200px;
+        margin: $space-2xl auto 0;
+        padding-top: $space-lg;
+        border-top: 1px solid rgba(244, 242, 236, 0.12);
+        text-align: center;
+        font-size: $fs-small;
+        color: rgba(244, 242, 236, 0.6);
+
+        p { margin: 0; color: inherit; }
+    }
+}

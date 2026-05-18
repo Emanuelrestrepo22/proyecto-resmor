@@ -1,10 +1,66 @@
- /*== 1.    ENCABEZADO===*/
- .container1__header{
-    background-color: #0f1b49;
-    color: white;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 0;
-    padding: 20px;
-    font-size: 1.5em;
+// ═══════════════════════════════════════════════════════════════
+// HEADER — Banda superior con teléfono / WhatsApp / horario
+// ═══════════════════════════════════════════════════════════════
+
+@use "variables" as *;
+
+.topbar {
+    background: $color-brand-azul;
+    color: $color-text-on-dark;
+    font-size: $fs-small;
+    padding-block: $space-xs;
+    padding-inline: $container-padding-x;
+
+    &__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: $space-md;
+    }
+
+    &__contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $space-lg;
+        margin: 0;
+
+        a {
+            color: $color-text-on-dark;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: $space-xs;
+            transition: color 0.2s ease;
+
+            &:hover { color: $color-brand-dorado-light; }
+
+            i {
+                color: $color-brand-dorado-light;
+                font-size: 1em;
+            }
+        }
+    }
+
+    &__lang {
+        font-size: $fs-caption;
+        text-transform: uppercase;
+        letter-spacing: $ls-overline;
+        color: $color-brand-dorado-light;
+    }
+
+    @media (max-width: 575.98px) {
+        text-align: center;
+
+        &__inner {
+            justify-content: center;
+        }
+    }
+}
+
+// Legacy alias del HTML viejo — para no romper si queda alguna página sin migrar
+.container1__header {
+    @extend .topbar;
 }

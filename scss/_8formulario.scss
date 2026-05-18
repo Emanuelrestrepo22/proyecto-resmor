@@ -1,30 +1,211 @@
-//=====  8. SECCION FORMULARIO=====/
-.formulario-contacto{
-    background-color: #1b2a4e;
-    min-height: 500px;
+// ═══════════════════════════════════════════════════════════════
+// FORMULARIO DE CONTACTO
+// ═══════════════════════════════════════════════════════════════
+
+@use "variables" as *;
+
+.contacto {
+    @include section-padding;
+    background: $color-brand-azul;
+    color: $color-text-on-dark;
     position: relative;
-    
-    // ====   8.2. SECCION FORMULARIO
-    
-    .formulario-contacto-contenedor__div{
+    overflow: hidden;
+
+    // SVG decorativo de ondas (opcional, mantener si gusta el toque)
+    &__waves {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 0;
+        opacity: 0.18;
+
+        svg { width: 100%; height: auto; display: block; }
+    }
+
+    &__grid {
         position: relative;
-        background: #fbfafa ;
-        border-radius: 5px;
-        width: 100%;
-        justify-content: center;
-        max-width: 500px;
-        .formulario-contacto-titulo__div{
-            .titulo{
-                color: $color-texto;
-                font-size: $standard-size;
-                font-weight: bold;
-            }
-            .parrafo{
-                font-size: $standard-size-parrafo
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: $space-2xl;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        @media (min-width: 992px) {
+            grid-template-columns: 1fr 1.2fr;
+            align-items: start;
+        }
+    }
+
+    &__info {
+        h2 {
+            color: $color-text-on-dark;
+            margin-bottom: $space-md;
+        }
+
+        p {
+            color: rgba(244, 242, 236, 0.9);
+            margin-bottom: $space-lg;
+        }
+
+        .eyebrow {
+            color: $color-brand-dorado-light;
+        }
+    }
+
+    &__channels {
+        list-style: none;
+        padding: 0;
+        margin: $space-lg 0 0;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: $space-md;
+            padding: $space-md;
+            background: rgba(244, 242, 236, 0.06);
+            border-radius: $radius-md;
+            margin-bottom: $space-sm;
+            border: 1px solid rgba(244, 242, 236, 0.08);
+            transition: background 0.2s ease;
+
+            &:hover { background: rgba(244, 242, 236, 0.1); }
+
+            i {
+                color: $color-brand-dorado-light;
+                font-size: 1.5rem;
+                flex-shrink: 0;
             }
 
+            a {
+                color: $color-text-on-dark;
+                text-decoration: none;
+                font-weight: 500;
+
+                &:hover { color: $color-brand-dorado-light; }
+            }
+
+            .channel-label {
+                display: block;
+                font-size: $fs-caption;
+                text-transform: uppercase;
+                letter-spacing: $ls-overline;
+                color: rgba(244, 242, 236, 0.6);
+                margin-bottom: 2px;
+            }
+
+            .contacto__meta {
+                color: rgba(244, 242, 236, 0.85);
+            }
         }
-        
-        
     }
 }
+
+.form-resmor {
+    background: $color-bg-base;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    border-radius: $radius-md;
+    box-shadow: $shadow-lg;
+    color: $color-text-primary;
+
+    &__title {
+        font-family: $font-display;
+        font-weight: 700;
+        font-size: $fs-h2;
+        color: $color-brand-azul;
+        margin-bottom: $space-sm;
+    }
+
+    &__subtitle {
+        color: $color-text-secondary;
+        margin-bottom: $space-lg;
+    }
+
+    .form-group {
+        margin-bottom: $space-md;
+    }
+
+    label {
+        display: block;
+        font-size: $fs-small;
+        font-weight: 500;
+        color: $color-brand-azul;
+        margin-bottom: $space-xxs;
+    }
+
+    .form-control,
+    .form-select {
+        width: 100%;
+        padding: $space-sm $space-md;
+        border: 1px solid $color-border;
+        border-radius: $radius-sm;
+        font-family: $font-body;
+        font-size: $fs-body;
+        background: $color-bg-base;
+        color: $color-text-primary;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+        &:focus {
+            outline: none;
+            border-color: $color-brand-dorado;
+            box-shadow: 0 0 0 3px rgba(176, 165, 106, 0.18);
+        }
+
+        &::placeholder {
+            color: $color-text-muted;
+        }
+    }
+
+    textarea.form-control {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    .form-submit {
+        margin-top: $space-md;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .form-note {
+        font-size: $fs-caption;
+        color: $color-text-muted;
+        margin-top: $space-md;
+        text-align: center;
+
+        a {
+            color: $color-brand-azul;
+            text-decoration: underline;
+
+            &:hover { color: $color-brand-dorado-dark; }
+        }
+    }
+}
+
+// Legacy alias
+.formulario-contacto {
+    @extend .contacto;
+}
+
+
+    .form-status {
+        min-height: 1.5rem;
+        margin-top: $space-md;
+        margin-bottom: 0;
+        font-size: $fs-small;
+        font-weight: 600;
+        text-align: center;
+
+        &[data-state='success'] {
+            color: $color-success;
+        }
+
+        &[data-state='error'] {
+            color: $color-error;
+        }
+
+        &[data-state='info'] {
+            color: $color-text-secondary;
+        }
+    }

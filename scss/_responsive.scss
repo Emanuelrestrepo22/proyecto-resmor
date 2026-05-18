@@ -1,31 +1,104 @@
+// ═══════════════════════════════════════════════════════════════
+// RESPONSIVE — Ajustes específicos por breakpoint
+// (los componentes ya son mobile-first con grid auto-fit + clamp)
+// ═══════════════════════════════════════════════════════════════
 
-//  ===================================MEDIA QUERIES PANTALLA ANCHA=============
+// Desktop grande (>=1200px)
+@use "variables" as *;
 
-@media (max-width:1200px){
-    #local{
-        flex-wrap: wrap;
-        padding-top: 30px;
-    }
-    .wrapper, .intro__section, .servicios, .information-text, .ubication .contenedor-formulario{
-        width: 90%;
-        margin: auto;
-        padding-top: 50px;
+@media (min-width: 1200px) {
+    .container, .container-fluid {
+        padding-inline: clamp(1rem, 3vw, 3rem);
     }
 }
 
-//===================================MEDIA QUERIES PANTALLA SM=============
-@media (max-width:768px){
-    .wrapper, .intro__section, .servicios, .information-text, .ubication .contenedor-formulario{
-        width: 100% !important;
+// Tablet (768px - 991px)
+@media (max-width: 991.98px) {
+    .navbar-resmor {
+        .navbar-collapse {
+            margin-top: $space-md;
+            padding-top: $space-md;
+            border-top: 1px solid $color-border;
+        }
+
+        .nav-link {
+            padding-block: $space-sm !important;
+        }
     }
-    .information-text p{
-        display: none;
-}
+
+    .hero {
+        text-align: center;
+
+        &__title { margin-inline: auto; }
+        &__subtitle { margin-inline: auto; }
+        &__cta-group { justify-content: center; }
+    }
 }
 
-//  ===================================MEDIA QUERIES PANTALLA EXTRA SM=============
-@media(max-width: 576px) {
-    .wrapper, .intro__section, .servicios, .information-text, .ubication .contenedor-formulario{
-         width: 100% !important;
+// Mobile (<768px)
+@media (max-width: 767.98px) {
+    .hero {
+        min-height: 420px;
+        padding-block: 3rem;
+
+        &__cta-group {
+            flex-direction: column;
+            width: 100%;
+
+            .btn-cta-primary,
+            .btn-cta-outline,
+            .btn-cta-whatsapp,
+            .btn-cta-gold {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    }
+
+    .servicios__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-resmor__inner {
+        text-align: center;
+
+        .contact-item {
+            justify-content: center;
+        }
+    }
+
+    .footer-resmor__social {
+        justify-content: center;
+    }
+}
+
+// Mobile chico (<576px)
+@media (max-width: 575.98px) {
+    .topbar__inner {
+        flex-direction: column;
+        gap: $space-xs;
+        font-size: $fs-caption;
+    }
+
+    .navbar-resmor .navbar-brand {
+        img { height: 36px; }
+        .brand-text { font-size: 1.25rem; }
+    }
+}
+
+// Print friendly
+@media print {
+    .whatsapp-float,
+    .navbar-resmor .navbar-cta,
+    .topbar {
+        display: none !important;
+    }
+
+    .hero {
+        min-height: auto;
+        color: $color-text-primary;
+        background: none !important;
+
+        &::before { display: none; }
     }
 }

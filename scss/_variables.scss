@@ -1,18 +1,138 @@
-$color-texto: #0f1b49;
-$standard-size: 2em;
-$standard-size-parrafo: 1.5em;
-$bg-ubi: #f3f3f3;
-$bg-standard: #0f1b491f;
-$j-c: center;
-$flex-direction: 
+// ═══════════════════════════════════════════════════════════════
+// RESMOR — DESIGN TOKENS
+// Fuente: manual oficial PRESENTACION_RESMOR.pdf (2018)
+// Pantone 2768 C (azul) + Pantone 4525 C (dorado) + Averta → Inter
+//
+// Ver docs/BRAND_RULES.md y docs/brand/BRAND_IMPLEMENTATION_NOTES.md
+// ═══════════════════════════════════════════════════════════════
 
-// MIXINS  ==
-@mixin standar-box ($j-c, $flex-direction) {
+// ───────────────────────────────────────────────
+// COLOR — Marca oficial
+// ───────────────────────────────────────────────
+$color-brand-azul:           #0F1B49;   // Pantone 2768 C — confianza, simpatía, seguridad
+$color-brand-azul-deep:      #0A1238;   // Hover/active sobre azul
+$color-brand-azul-soft:      #1B2A66;   // Acento secundario sobre claro
+$color-brand-dorado:         #B0A56A;   // Pantone 4525 C — glamour, éxito, fidelidad
+$color-brand-dorado-light:   #D4CB9B;   // Hover, divisores, badges
+$color-brand-dorado-dark:    #8C8350;   // Dorado oscuro (contraste sobre blanco)
+
+// ───────────────────────────────────────────────
+// COLOR — Neutros
+// ───────────────────────────────────────────────
+$color-bg-base:              #FFFFFF;
+$color-bg-soft:              #F4F2EC;   // Fondo cálido (compañero del dorado)
+$color-bg-cool:              #F3F3F3;   // Fondo neutro frío
+$color-bg-overlay:           rgba(15, 27, 73, 0.12);   // Navy con alpha
+$color-bg-photo-overlay:     rgba(15, 27, 73, 0.55);   // Overlay sobre hero
+$color-bg-photo-gradient:    linear-gradient(135deg, rgba(15, 27, 73, 0.55) 0%, rgba(10, 18, 56, 0.75) 100%);
+
+$color-text-primary:         #0F1B49;   // = brand-azul
+$color-text-secondary:       #4A5170;
+$color-text-muted:           #8A8FA3;
+$color-text-on-dark:         #F4F2EC;
+$color-text-on-gold:         #0F1B49;   // Texto azul sobre fondo dorado
+
+$color-border:               #E5E7ED;
+$color-divider:              #D8DBE5;
+
+// ───────────────────────────────────────────────
+// COLOR — Funcionales
+// ───────────────────────────────────────────────
+$color-whatsapp:             #25D366;
+$color-whatsapp-hover:       #1EBD5B;
+$color-success:              #2EA44F;
+$color-warning:              #D4A017;
+$color-error:                #CF222E;
+
+// ───────────────────────────────────────────────
+// LEGACY — Aliases para mantener compatibilidad
+// ───────────────────────────────────────────────
+$color-texto:                $color-brand-azul;
+$bg-ubi:                     $color-bg-cool;
+$bg-standard:                $color-bg-overlay;
+$standard-size:              2em;
+$standard-size-parrafo:      1.5em;
+$j-c:                        center;
+
+// ───────────────────────────────────────────────
+// TIPOGRAFÍA — Inter como sustituto de Averta
+// (Averta es comercial — Inter mantiene la geometría moderna/elegante)
+// ───────────────────────────────────────────────
+$font-display:               'Inter', 'Averta Demo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$font-body:                  'Inter', 'Averta', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+$fs-display:                 clamp(2.5rem, 5vw, 4rem);
+$fs-h1:                      clamp(2rem, 3.5vw, 2.75rem);
+$fs-h2:                      clamp(1.5rem, 2.5vw, 2rem);
+$fs-h3:                      clamp(1.25rem, 1.8vw, 1.5rem);
+$fs-h4:                      1.125rem;
+$fs-body:                    1rem;
+$fs-body-lg:                 1.125rem;
+$fs-small:                   0.875rem;
+$fs-caption:                 0.75rem;
+
+$lh-display:                 1.05;
+$lh-heading:                 1.2;
+$lh-body:                    1.6;
+
+$ls-display:                 -0.02em;
+$ls-heading:                 -0.01em;
+$ls-overline:                0.12em;
+$ls-uppercase:               0.08em;
+
+// ───────────────────────────────────────────────
+// ESPACIADO
+// ───────────────────────────────────────────────
+$space-xxs:                  0.25rem;
+$space-xs:                   0.5rem;
+$space-sm:                   0.75rem;
+$space-md:                   1rem;
+$space-lg:                   1.5rem;
+$space-xl:                   2rem;
+$space-2xl:                  3rem;
+$space-3xl:                  4rem;
+$space-4xl:                  6rem;
+
+$section-padding-y:          clamp(3rem, 6vw, 6rem);
+$container-padding-x:        clamp(1rem, 3vw, 2rem);
+
+// ───────────────────────────────────────────────
+// RADIOS Y SOMBRAS
+// ───────────────────────────────────────────────
+$radius-sm:                  4px;
+$radius-md:                  8px;
+$radius-lg:                  16px;
+$radius-pill:                999px;
+
+$shadow-sm:                  0 2px 6px rgba(15, 27, 73, 0.06);
+$shadow-md:                  0 8px 24px rgba(15, 27, 73, 0.08);
+$shadow-lg:                  0 16px 40px rgba(15, 27, 73, 0.12);
+$shadow-float:               0 4px 16px rgba(0, 0, 0, 0.2);
+
+// ───────────────────────────────────────────────
+// MIXINS
+// ───────────────────────────────────────────────
+@mixin standar-box($j-c, $flex-direction) {
     display: flex;
     justify-content: $j-c;
     flex-direction: $flex-direction;
     align-items: center;
     background-color: $bg-standard;
-    justify-content: $j-c;
-    flex-direction: $flex-direction;
+}
+
+@mixin section-padding {
+    padding-top: $section-padding-y;
+    padding-bottom: $section-padding-y;
+}
+
+@mixin hero-overlay {
+    position: relative;
+    isolation: isolate;
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: $color-bg-photo-gradient;
+        z-index: -1;
+    }
 }

@@ -1,0 +1,91 @@
+// ═══════════════════════════════════════════════════════════════
+// BASE — Reset + body + smooth scroll + utilities mínimas
+// ═══════════════════════════════════════════════════════════════
+
+@use "variables" as *;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $font-body;
+    font-size: $fs-body;
+    line-height: $lh-body;
+    color: $color-text-primary;
+    background: $color-bg-base;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: $color-brand-azul;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: $color-brand-dorado-dark;
+    }
+}
+
+// Foco accesible
+:focus-visible {
+    outline: 2px solid $color-brand-dorado;
+    outline-offset: 2px;
+    border-radius: $radius-sm;
+}
+
+// Limpia outline default cuando hay :focus-visible mejor
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.section {
+    @include section-padding;
+    padding-inline: $container-padding-x;
+}
+
+.section--soft {
+    background: $color-bg-soft;
+}
+
+.section--cool {
+    background: $color-bg-cool;
+}
+
+.section--dark {
+    background: $color-brand-azul;
+    color: $color-text-on-dark;
+
+    h1, h2, h3 { color: $color-text-on-dark; }
+}
+
+.eyebrow {
+    display: inline-block;
+    font-size: $fs-small;
+    text-transform: uppercase;
+    letter-spacing: $ls-overline;
+    color: $color-brand-dorado-dark;
+    font-weight: 600;
+    margin-bottom: $space-sm;
+}
+
+.divider-gold {
+    width: 64px;
+    height: 3px;
+    background: $color-brand-dorado;
+    border: 0;
+    margin: $space-md 0;
+}

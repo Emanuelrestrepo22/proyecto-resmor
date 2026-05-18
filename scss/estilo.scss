@@ -1,88 +1,31 @@
-// IMPORTS //
-@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap');
-@import "variables";
-@import "1encabezado";
-@import "2barra-nav";
-@import "6acerca-nosotros";
-@import "8formulario";
-@import "responsive";
+// ═══════════════════════════════════════════════════════════════
+// RESMOR — ENTRY SCSS
+// Fuente: PRESENTACION_RESMOR.pdf (manual oficial, 2018)
+// Stack: HTML5 + Bootstrap 5.1 (CDN) + Sass (Dart, @use moderna)
+// ═══════════════════════════════════════════════════════════════
 
-@import "7ubi-information";
+// 1. Tokens (cargado primero, una sola vez)
+@use "variables";
 
-//======GENERALES===
+// 2. Base + tipografía
+@use "base";
+@use "typography";
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-body{
-    font-family: 'Raleway', sans-serif;
+// 3. Overrides de Bootstrap
+@use "bootstrap-overrides";
 
+// 4. Componentes globales (alias para parciales que empiezan con número)
+@use "1encabezado"     as encabezado;
+@use "2barra-nav"      as barra-nav;
+@use "3hero"           as hero;
+@use "4servicios"      as servicios;
+@use "5galeria"        as galeria;
+@use "6acerca-nosotros" as acerca-nosotros;
+@use "7ubi-information" as ubi-information;
+@use "8formulario"     as formulario;
+@use "9footer"         as footer;
+@use "10whatsapp-float" as whatsapp-float;
+@use "11lang-switcher"  as lang-switcher;
 
-   
-    
-    /*===  3. CAROUSEL SLIDER===*/
-    div{
-        .carousel{
-            .carousel-inner{
-                max-height: 40rem;
-            }
-        }
-    }
-    /*===  4.  SECCION INTRO===*/
-    .intro__section{
-        width: 100%;
-        text-align: center;
-
-        h1{
-            padding: 0.5em;
-            font-size: $standard-size;
-            span{
-                color: #0f1b49;
-                font-weight: bold;
-
-            }
-        }
-        p{
-            padding: 2rem;
-            font-size: $standard-size-parrafo;
-        }
-    }
-    /*===  5. SECCION SERVICIOS===*/
-    .servicios{
-        @include standar-box(center, row);
-        flex-wrap: wrap;
-        .servicios-caja__div{
-            width: 80%;
-            .servicios-caja__img{
-                width: 250px;
-            }
-        }
-    }
-
-    //  9.. FOOTER ===============
-    footer{
-        background-color: $color-texto;
-        text-align: center;
-        p{
-            color: #3f3f3f;
-            text-align: center;
-        }
-        #iconos{
-            i{
-                font-size: 2em;
-                padding: 0 8px;
-                color: #3f3f3f;
-            }
-        }
-    }
-}
-
-
-
-
-
-
-
-
+// 5. Responsive overrides al final
+@use "responsive";

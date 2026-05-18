@@ -1,0 +1,185 @@
+// ═══════════════════════════════════════════════════════════════
+// HERO — Foto + overlay azul + texto blanco
+// ═══════════════════════════════════════════════════════════════
+
+@use "variables" as *;
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    min-height: clamp(480px, 70vh, 680px);
+    display: flex;
+    align-items: center;
+    color: $color-text-on-dark;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-block: clamp(4rem, 8vw, 7rem);
+    padding-inline: $container-padding-x;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg,
+            rgba(15, 27, 73, 0.65) 0%,
+            rgba(10, 18, 56, 0.85) 100%);
+        z-index: -1;
+    }
+
+    .container {
+        max-width: 1100px;
+    }
+
+    &__eyebrow {
+        display: inline-block;
+        font-size: $fs-small;
+        text-transform: uppercase;
+        letter-spacing: $ls-overline;
+        color: $color-brand-dorado-light;
+        font-weight: 600;
+        margin-bottom: $space-md;
+    }
+
+    &__title {
+        font-family: $font-display;
+        font-weight: 800;
+        font-style: italic;
+        font-size: $fs-display;
+        line-height: $lh-display;
+        letter-spacing: $ls-display;
+        color: $color-text-on-dark;
+        margin: 0 0 $space-lg;
+        max-width: 20ch;
+    }
+
+    &__subtitle {
+        font-family: $font-body;
+        font-weight: 300;
+        font-size: $fs-body-lg;
+        line-height: $lh-body;
+        max-width: 56ch;
+        margin: 0 0 $space-xl;
+        color: rgba(244, 242, 236, 0.92);
+    }
+
+    &__subtitle-pt {
+        display: inline-block;
+        margin-top: $space-md;
+        font-size: $fs-small;
+        text-transform: uppercase;
+        letter-spacing: $ls-overline;
+        color: $color-brand-dorado-light;
+        font-weight: 500;
+
+        &::before {
+            content: '🇧🇷 ';
+            margin-right: $space-xxs;
+        }
+    }
+
+    &__cta-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $space-md;
+        margin-top: $space-xl;
+    }
+
+    // Hero compacto para páginas internas
+    &--compact {
+        min-height: clamp(320px, 45vh, 420px);
+
+        .hero__title {
+            font-size: $fs-h1;
+            font-style: normal;
+        }
+    }
+}
+
+// Botones CTA estilizados
+.btn-cta-primary,
+.btn-cta-outline,
+.btn-cta-whatsapp,
+.btn-cta-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-xs;
+    padding: $space-sm $space-xl;
+    border-radius: $radius-sm;
+    font-family: $font-body;
+    font-weight: 600;
+    font-size: $fs-small;
+    text-transform: uppercase;
+    letter-spacing: $ls-uppercase;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    line-height: 1;
+
+    .bi {
+        font-size: 1.1em;
+        line-height: 1;
+    }
+}
+
+.btn-cta-primary {
+    background: $color-brand-azul;
+    color: $color-text-on-dark;
+    border-color: $color-brand-azul;
+
+    &:hover {
+        background: $color-brand-azul-deep;
+        border-color: $color-brand-azul-deep;
+        color: $color-text-on-dark;
+        transform: translateY(-1px);
+    }
+}
+
+.btn-cta-outline {
+    background: transparent;
+    color: $color-brand-azul;
+    border-color: $color-brand-azul;
+
+    &:hover {
+        background: $color-brand-azul;
+        color: $color-text-on-dark;
+    }
+
+    &--on-dark {
+        color: $color-text-on-dark;
+        border-color: $color-text-on-dark;
+
+        &:hover {
+            background: $color-text-on-dark;
+            color: $color-brand-azul;
+        }
+    }
+}
+
+.btn-cta-whatsapp {
+    background: $color-whatsapp;
+    color: #ffffff;
+    border-color: $color-whatsapp;
+    font-weight: 700;
+
+    &:hover {
+        background: $color-whatsapp-hover;
+        border-color: $color-whatsapp-hover;
+        color: #ffffff;
+        transform: translateY(-1px);
+    }
+}
+
+.btn-cta-gold {
+    background: $color-brand-dorado;
+    color: $color-brand-azul;
+    border-color: $color-brand-dorado;
+    font-weight: 700;
+
+    &:hover {
+        background: $color-brand-dorado-dark;
+        border-color: $color-brand-dorado-dark;
+        color: $color-text-on-dark;
+    }
+}

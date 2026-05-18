@@ -1,0 +1,219 @@
+// ═══════════════════════════════════════════════════════════════
+// SERVICIOS — Grid de cards
+// ═══════════════════════════════════════════════════════════════
+
+@use "variables" as *;
+
+.servicios {
+    @include section-padding;
+
+    &__intro {
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto $space-3xl;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: $space-xl;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+.servicio-card {
+    background: $color-bg-base;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    padding: $space-xl;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: $shadow-md;
+        border-color: $color-brand-dorado;
+
+        .servicio-card__cta::after {
+            transform: translateX(4px);
+        }
+    }
+
+    &__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 64px;
+        height: 64px;
+        background: rgba(176, 165, 106, 0.12);
+        border-radius: $radius-md;
+        color: $color-brand-dorado-dark;
+        font-size: 2rem;
+        margin-bottom: $space-md;
+    }
+
+    &__title {
+        font-family: $font-display;
+        font-weight: 700;
+        font-size: $fs-h3;
+        color: $color-brand-azul;
+        margin: 0 0 $space-sm;
+        line-height: $lh-heading;
+    }
+
+    &__desc {
+        color: $color-text-secondary;
+        font-size: $fs-body;
+        line-height: $lh-body;
+        flex: 1;
+        margin: 0 0 $space-md;
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 $space-md;
+
+        li {
+            font-size: $fs-small;
+            color: $color-text-secondary;
+            padding-left: $space-md;
+            margin-bottom: $space-xxs;
+            position: relative;
+
+            &::before {
+                content: '✓';
+                position: absolute;
+                left: 0;
+                color: $color-brand-dorado-dark;
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__cta {
+        display: inline-flex;
+        align-items: center;
+        gap: $space-xs;
+        color: $color-brand-azul;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: $fs-small;
+        text-transform: uppercase;
+        letter-spacing: $ls-uppercase;
+        margin-top: auto;
+
+        &::after {
+            content: '→';
+            transition: transform 0.2s ease;
+        }
+    }
+}
+
+// Variante "por qué Resmor" — 3 columnas con ícono grande
+.por-que-resmor {
+    @include section-padding;
+    background: $color-bg-soft;
+
+    &__intro {
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto $space-3xl;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: $space-2xl;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    &__item {
+        text-align: center;
+
+        .pq-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: $color-brand-azul;
+            color: $color-brand-dorado-light;
+            font-size: 2.25rem;
+            margin-bottom: $space-md;
+        }
+
+        h3 {
+            font-size: $fs-h3;
+            margin-bottom: $space-sm;
+        }
+
+        p {
+            font-size: $fs-body;
+            color: $color-text-secondary;
+            max-width: 32ch;
+            margin-inline: auto;
+        }
+    }
+}
+
+// Pasos numerados — "Cómo trabajamos"
+.pasos {
+    @include section-padding;
+
+    &__intro {
+        text-align: center;
+        margin-bottom: $space-3xl;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: $space-xl;
+        max-width: 1000px;
+        margin: 0 auto;
+        counter-reset: paso;
+    }
+
+    &__item {
+        text-align: center;
+        position: relative;
+        padding-top: $space-2xl;
+        counter-increment: paso;
+
+        &::before {
+            content: counter(paso);
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $color-brand-dorado;
+            color: $color-brand-azul;
+            border-radius: 50%;
+            font-family: $font-display;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            font-size: $fs-h3;
+            margin-bottom: $space-sm;
+        }
+
+        p {
+            color: $color-text-secondary;
+        }
+    }
+}

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Sitemap Resmor Transportes
+  Incluye alternates ES / PT / EN por cada página principal.
+  Las landings SEO dedicadas (airport-transfer / transfer-aeroporto) van como entradas separadas.
+-->
+<urlset xmlns="http://www.sitemap.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Home -->
+  <url>
+    <loc>https://resmor.com.ar/</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://resmor.com.ar/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://resmor.com.ar/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://resmor.com.ar/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://resmor.com.ar/"/>
+  </url>
+
+  <!-- Nosotros -->
+  <url>
+    <loc>https://resmor.com.ar/nosotros.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://resmor.com.ar/nosotros.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://resmor.com.ar/nosotros.html?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://resmor.com.ar/nosotros.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://resmor.com.ar/nosotros.html"/>
+  </url>
+
+  <!-- Servicios -->
+  <url>
+    <loc>https://resmor.com.ar/servicios.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://resmor.com.ar/servicios.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://resmor.com.ar/servicios.html?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://resmor.com.ar/servicios.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://resmor.com.ar/servicios.html"/>
+  </url>
+
+  <!-- Tarifas -->
+  <url>
+    <loc>https://resmor.com.ar/tarifas.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://resmor.com.ar/tarifas.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://resmor.com.ar/tarifas.html?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://resmor.com.ar/tarifas.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://resmor.com.ar/tarifas.html"/>
+  </url>
+
+  <!-- Galería -->
+  <url>
+    <loc>https://resmor.com.ar/galeria.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://resmor.com.ar/galeria.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://resmor.com.ar/galeria.html?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://resmor.com.ar/galeria.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://resmor.com.ar/galeria.html"/>
+  </url>
+
+  <!-- Contacto -->
+  <url>
+    <loc>https://resmor.com.ar/contactanos.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://resmor.com.ar/contactanos.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://resmor.com.ar/contactanos.html?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://resmor.com.ar/contactanos.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://resmor.com.ar/contactanos.html"/>
+  </url>
+
+  <!-- Landing SEO EN — Airport Transfer Buenos Aires -->
+  <url>
+    <loc>https://resmor.com.ar/airport-transfer-buenos-aires.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Landing SEO PT — Transfer Aeroporto Buenos Aires -->
+  <url>
+    <loc>https://resmor.com.ar/transfer-aeroporto-buenos-aires.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>

@@ -7,3 +7,11 @@ photos/
 /photos/
 photosgit
 /img1/
+# Legacy reference (assets curados en image/brand/)
+branding-resmor/
+
+# Duplicado de favicons no referenciado por HTML
+public/
+
+# Build artifacts opcionales
+*.css.map

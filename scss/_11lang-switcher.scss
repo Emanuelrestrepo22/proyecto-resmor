@@ -1,0 +1,103 @@
+// ═══════════════════════════════════════════════════════════════
+// LANGUAGE SWITCHER — ES / PT / EN toggle en navbar + mobile
+// ═══════════════════════════════════════════════════════════════
+
+@use "variables" as *;
+
+.lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-xxs;
+    padding: $space-xxs;
+    border-radius: $radius-pill;
+    background: rgba(15, 27, 73, 0.06);
+    border: 1px solid $color-border;
+
+    &__btn {
+        appearance: none;
+        background: transparent;
+        border: 0;
+        border-radius: $radius-pill;
+        padding: $space-xxs $space-sm;
+        font-family: $font-body;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: $color-text-secondary;
+        cursor: pointer;
+        transition: all 0.18s ease;
+        line-height: 1;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+
+        .flag {
+            font-size: 0.95em;
+            line-height: 1;
+        }
+
+        &:hover {
+            color: $color-brand-azul;
+            background: rgba(176, 165, 106, 0.12);
+        }
+
+        &.is-active,
+        &[aria-pressed="true"] {
+            background: $color-brand-azul;
+            color: $color-text-on-dark;
+            box-shadow: 0 2px 6px rgba(15, 27, 73, 0.18);
+        }
+
+        &:focus-visible {
+            outline: 2px solid $color-brand-dorado;
+            outline-offset: 2px;
+        }
+    }
+
+    // Variante para la topbar (azul oscuro)
+    &--on-dark {
+        background: rgba(244, 242, 236, 0.08);
+        border-color: rgba(244, 242, 236, 0.18);
+
+        .lang-switcher__btn {
+            color: rgba(244, 242, 236, 0.7);
+
+            &:hover {
+                color: $color-brand-dorado-light;
+                background: rgba(176, 165, 106, 0.16);
+            }
+
+            &.is-active,
+            &[aria-pressed="true"] {
+                background: $color-brand-dorado;
+                color: $color-brand-azul;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+            }
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        gap: 0;
+
+        &__btn {
+            padding: $space-xxs $space-xs;
+            font-size: 0.7rem;
+
+            .flag { display: none; }
+        }
+    }
+}
+
+// Posicionar el switcher dentro del navbar y la topbar
+.topbar .lang-switcher { margin-left: $space-md; }
+
+.navbar-resmor .lang-switcher {
+    margin-left: $space-md;
+
+    @media (max-width: 991.98px) {
+        margin: $space-md 0 0;
+        width: 100%;
+        justify-content: center;
+    }
+}

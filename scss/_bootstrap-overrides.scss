@@ -1,0 +1,74 @@
+// ═══════════════════════════════════════════════════════════════
+// BOOTSTRAP OVERRIDES — Reescritura de clases utility de Bootstrap
+// para que respeten la paleta oficial sin recompilar Bootstrap.
+// ═══════════════════════════════════════════════════════════════
+
+// Botones primarios → azul Resmor
+@use "variables" as *;
+
+.btn-primary {
+    background-color: $color-brand-azul !important;
+    border-color: $color-brand-azul !important;
+    color: $color-text-on-dark !important;
+    font-weight: 500;
+    padding: $space-sm $space-xl;
+    letter-spacing: $ls-uppercase;
+    transition: all 0.2s ease;
+
+    &:hover,
+    &:focus {
+        background-color: $color-brand-azul-deep !important;
+        border-color: $color-brand-azul-deep !important;
+        color: $color-text-on-dark !important;
+    }
+}
+
+.bg-primary  { background-color: $color-brand-azul !important; }
+.text-primary { color: $color-brand-azul !important; }
+.border-primary { border-color: $color-brand-azul !important; }
+
+// Navbar light → adaptarlo al color base
+.navbar-light {
+    background-color: $color-bg-base !important;
+}
+
+.bg-light {
+    background-color: $color-bg-base !important;
+}
+
+// Forms — inputs con foco dorado sutil
+.form-control {
+    border-radius: $radius-sm;
+    border-color: $color-border;
+    padding: $space-sm $space-md;
+    font-family: $font-body;
+    font-size: $fs-body;
+
+    &:focus {
+        border-color: $color-brand-dorado;
+        box-shadow: 0 0 0 0.2rem rgba(176, 165, 106, 0.25);
+    }
+}
+
+// Carousel — controls con el azul de marca
+.carousel-control-prev,
+.carousel-control-next {
+    width: 8%;
+    opacity: 0.9;
+
+    &:hover { opacity: 1; }
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(15, 27, 73, 0.45);
+    border-radius: 50%;
+    padding: 1.5rem;
+    background-size: 50%;
+}
+
+// Container default
+.container,
+.container-fluid {
+    padding-inline: clamp(1rem, 3vw, 2rem);
+}

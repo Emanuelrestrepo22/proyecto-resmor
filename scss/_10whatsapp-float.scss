@@ -1,0 +1,56 @@
+// ═══════════════════════════════════════════════════════════════
+// WHATSAPP FLOTANTE — Sticky CTA visible en todas las páginas
+// ═══════════════════════════════════════════════════════════════
+
+@use "variables" as *;
+
+.whatsapp-float {
+    position: fixed;
+    bottom: $space-lg;
+    right: $space-lg;
+    z-index: 999;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: $color-whatsapp;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    text-decoration: none;
+    box-shadow: $shadow-float;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    line-height: 1;
+
+    // Pulso sutil de atención
+    &::before {
+        content: '';
+        position: absolute;
+        inset: -4px;
+        border-radius: 50%;
+        border: 2px solid $color-whatsapp;
+        opacity: 0.6;
+        animation: wa-pulse 2.4s ease-out infinite;
+    }
+
+    &:hover {
+        transform: scale(1.06);
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+        background: $color-whatsapp-hover;
+        color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+        bottom: $space-md;
+        right: $space-md;
+        width: 54px;
+        height: 54px;
+        font-size: 1.8rem;
+    }
+}
+
+@keyframes wa-pulse {
+    0%   { transform: scale(1);    opacity: 0.6; }
+    100% { transform: scale(1.4);  opacity: 0; }
+}

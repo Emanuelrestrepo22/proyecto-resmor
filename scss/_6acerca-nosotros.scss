@@ -1,31 +1,97 @@
+// ═══════════════════════════════════════════════════════════════
+// SECCIÓN "ACERCA DE NOSOTROS" / VALORES
+// ═══════════════════════════════════════════════════════════════
 
-//==== 6. SECCION ACERCA DE NOSOTROS /INFORMATIVO   =
-section{
-    //===  6.1   TEXTO INFORMATIVO===
-    .information-text{
-        @include standar-box (center, column);
-        margin: auto;
-        text-align: center;
-        padding: 0.5em;
-        width: 90%;
-        h1{
-            margin-bottom: 1em;
-            font-size: 2em;
-            span{
-                color: $color-texto;
-            }
-        }
-        p{
-            font-size: $standard-size-parrafo;
-        }
-        /*===  IMAGE-COLAGE=======*/
-        .informacion-text-image__div{
-            width: auto;
-            #equipo__img{
-                max-height:30rem !important;
-                width: 80%;
-            }
+@use "variables" as *;
+
+.acerca {
+    @include section-padding;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: $space-3xl;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        @media (min-width: 992px) {
+            grid-template-columns: 1.1fr 1fr;
         }
     }
 
+    &__content {
+        h2 {
+            margin-bottom: $space-md;
+        }
+
+        p {
+            color: $color-text-secondary;
+            margin-bottom: $space-md;
+        }
+
+        &-cta {
+            margin-top: $space-lg;
+        }
+    }
+
+    &__image {
+        position: relative;
+        border-radius: $radius-lg;
+        overflow: hidden;
+        box-shadow: $shadow-md;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg,
+                rgba(176, 165, 106, 0) 0%,
+                rgba(176, 165, 106, 0.18) 100%);
+            pointer-events: none;
+        }
+    }
+}
+
+// Valores — atributos del manual (4 cards)
+.valores {
+    @include section-padding;
+    background: $color-bg-soft;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: $space-xl;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    &__item {
+        background: $color-bg-base;
+        padding: $space-xl;
+        border-radius: $radius-md;
+        border-left: 4px solid $color-brand-dorado;
+
+        h3 {
+            font-size: $fs-h3;
+            margin-bottom: $space-sm;
+        }
+
+        p {
+            color: $color-text-secondary;
+            font-size: $fs-body;
+            margin: 0;
+        }
+    }
+}
+
+// Legacy alias
+.information-text {
+    @extend .acerca__content;
 }

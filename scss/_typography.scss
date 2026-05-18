@@ -1,0 +1,64 @@
+// ═══════════════════════════════════════════════════════════════
+// TYPOGRAPHY — Jerarquía oficial (sustituto de Averta: Inter)
+// ═══════════════════════════════════════════════════════════════
+
+@use "variables" as *;
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-display;
+    font-weight: 700;
+    line-height: $lh-heading;
+    letter-spacing: $ls-heading;
+    color: $color-brand-azul;
+    margin: 0 0 $space-md;
+}
+
+h1, .h1 {
+    font-size: $fs-h1;
+    font-weight: 800;
+}
+
+h2, .h2 {
+    font-size: $fs-h2;
+}
+
+h3, .h3 {
+    font-size: $fs-h3;
+    font-weight: 600;
+}
+
+h4, .h4 {
+    font-size: $fs-h4;
+    font-weight: 600;
+}
+
+.display {
+    font-size: $fs-display;
+    font-weight: 800;
+    line-height: $lh-display;
+    letter-spacing: $ls-display;
+    font-style: italic;
+}
+
+p {
+    font-size: $fs-body;
+    line-height: $lh-body;
+    color: $color-text-secondary;
+    margin: 0 0 $space-md;
+}
+
+.lead {
+    font-size: $fs-body-lg;
+    font-weight: 300;
+    color: $color-text-primary;
+}
+
+.text-small  { font-size: $fs-small; }
+.text-muted  { color: $color-text-muted; }
+.text-azul   { color: $color-brand-azul; }
+.text-dorado { color: $color-brand-dorado-dark; }
+
+strong, b {
+    font-weight: 700;
+    color: $color-brand-azul;
+}
