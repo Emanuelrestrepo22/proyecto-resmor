@@ -3,10 +3,15 @@ node_modules/
 node_modules
 /img/
 img/
-photos/
-/photos/
 photosgit
 /img1/
+
+# Bloquea solo /photos/ del root (legacy). NO afecta image/brand/photos/
+/photos/
+
+# Stories y posts de redes no referenciados por HTML
+image/brand/photos/Resmor-Post-Grupos.jpg
+image/brand/photos/Resmor-Stories-FB-IG.jpg
 
 # Legacy reference (assets curados en image/brand/)
 branding-resmor/
